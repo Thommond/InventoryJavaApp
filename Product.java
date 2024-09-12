@@ -2,20 +2,20 @@ public class Product {
 
     private int productID;
     private String productName;
-    private int category;
+    private String category;
     private double price; 
     private int quantityInStock;
 
-       // Default constructor
-       public Product() {
+    // Default constructor
+    public Product() {
         this.productID = 0;
         this.productName = "";
-        this.category = 0;
+        this.category = "";
         this.price = 0.0;
         this.quantityInStock = 0;
     }
     
-    public Product(int productID, String productName, int category, double price, int quantityInStock) {
+    public Product(int productID, String productName, String category, double price, int quantityInStock) {
         this.productID = productID;
         this.productName = productName;
         this.category = category;
@@ -42,11 +42,11 @@ public class Product {
     }
 
     // Getter and Setter for category
-    public int getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCategory(int category) {
+    public void setCategory(String category) {
         this.category = category;
     }
 
