@@ -1,5 +1,4 @@
 public class Product {
-
     private int productID;
     private String productName;
     private String category;
