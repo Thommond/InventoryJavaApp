@@ -2,6 +2,16 @@ public class InventoryManagment {
 
     public static void main(String[] args) {
         // TODO: Add menu driven feature for products, categorys, and inventory. 
+
+
+        // We will be using these later. 
+        Category produce = new Category(1, "Produce");
+        Category dairy = new Category(2, "Dairy");
+        Category meats = new Category(3, "Meats");
+        Category grains = new Category(4, "Grains");
+        Category drinks = new Category(5, "Drinks");
+        Category snacks = new Category(6, "Snacks");
+
         // Produce
         Product plum = new Product(1, "Pack of Plums", "Produce", 8.50, 10);
         Product carrot = new Product(2, "Pack of Carrots", "Produce", 3.99, 30);
