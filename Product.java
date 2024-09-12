@@ -67,4 +67,13 @@ public class Product {
     public void setQuantityInStock(int quantityInStock) {
         this.quantityInStock = quantityInStock;
     }
+
+    // Stock quantity methods s
+    public String addStock(int quantity) {
+        return "Added _ Stock of _";
+    }
+
+    public String removeStock(int quantity) {
+        return "Removed _ Stock of _";
+    }
 }
