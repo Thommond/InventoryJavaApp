@@ -67,12 +67,22 @@ public class Product {
         this.quantityInStock = quantityInStock;
     }
 
-    // Stock quantity methods s
-    public String addStock(int quantity) {
-        return "Added _ Stock of _";
+    // Stock quantity methods
+    public void addStock(int quantity) {
+        if (quantity > 0 && quantity < 100) {
+            quantityInStock+=quantity;
+            System.out.println("Added "+quantity+" "+this.productName+"s to the stock.");
+        } else {
+            System.out.println("Invalid entry, please try again. Added stock must be less than 100 and greater than 0.");
+        }
     }
 
-    public String removeStock(int quantity) {
-        return "Removed _ Stock of _";
+    public void removeStock(int quantity) {
+        if (quantity > 0 && quantity < 100) {
+            quantityInStock-=quantity;
+            System.out.println("Removed "+quantity+" "+this.productName+"s from the stock.");
+        } else {
+            System.out.println("Invalid entry, please try again. Failed to remove stock. Removed amount must be more than 0 and less than 100.");
+        }
     }
 }
