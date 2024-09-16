@@ -32,19 +32,18 @@ public class InventoryManagment {
         int menuOption;
         int userQuantity;
 
+        Product currentProduct = orangeJuice;
+
         // Main menu 
         String mainMenu = """
             Menu: 
+            1. Add stock
             
-            1. See products
+            2. Remove stock
             
-            2. Add stock to a product
+            3. Check product details
             
-            3. Remove stock from a product
-            
-            4. Check a products stock
-            
-            5. Exit 
+            4. Exit 
             """;
 
         while (exit == false) {
@@ -57,34 +56,33 @@ public class InventoryManagment {
             switch (menuOption) {
                 // Based on users input do action
                 case 1:
-                    // Display Items
-                    thomsVendingMachine.displayItems();
+                    // Add quantity of an item
+                    System.out.println("Please enter a quantity less then or equal to 100");
+                    userQuantity = scnr.nextInt();
+                    currentProduct.addStock(userQuantity);
                     break;
                 case 2:
-                    // Add funds
-                    System.out.println("Please enter a valid dollar amount less then or equal to $10:");
-                    moneyToAdd = scnr.nextDouble();
-                    thomsVendingMachine.addMoney(moneyToAdd);
+                    // Remove quantity of an item
+                    System.out.println("Please enter a quantity less then or equal to 100");
+                    userQuantity = scnr.nextInt();
+                    currentProduct.removeStock(userQuantity);
                     break;
                 case 3:
-                    // Purchase Items
-                    System.out.println("Choose an option 1-4 for purchase.");
-                    int itemChoice = scnr.nextInt();
-                    thomsVendingMachine.purchaseItem(itemChoice);
+                    // Check details of a product
+                    System.out.println("There are currently "+ currentProduct.getQuantityInStock() + " "+currentProduct.getProductName()+"s in stock\n");
+                    System.out.println("The category for "+currentProduct.getProductName()+" is "+currentProduct.getCategory() + "\n");
+                    System.out.println("The price for "+currentProduct.getProductName()+" is "+currentProduct.getPrice());
                     break;
                 case 4:
-                    // Check Balance
-                    System.out.println("Your balance is $" + thomsVendingMachine.getBalance() + "\n");
-                    break;
-                case 5:
-                    // Exit the Vending Machine
+                    // Exit the inventory tool
                     scnr.close();
-                    exit = thomsVendingMachine.exit();
+                    exit = false;
                     break;
                 default:
-                    System.out.println("Remember to select integers 1-5 for a valid menu option.\n");
+                    System.out.println("Remember to select integers 1-4 for a valid menu option.\n");
 
             }
         }
 
     }
+}
