@@ -1,8 +1,10 @@
+
 public class Product {
+
     private int productID;
     private String productName;
     private String category;
-    private double price; 
+    private double price;
     private int quantityInStock;
 
     // Default constructor
@@ -13,7 +15,7 @@ public class Product {
         this.price = 0.0;
         this.quantityInStock = 0;
     }
-    
+
     public Product(int productID, String productName, String category, double price, int quantityInStock) {
         this.productID = productID;
         this.productName = productName;
@@ -22,8 +24,8 @@ public class Product {
         this.quantityInStock = quantityInStock;
     }
 
-      // Getter and Setter for productID
-      public int getProductID() {
+    // Getter and Setter for productID
+    public int getProductID() {
         return productID;
     }
 
@@ -70,8 +72,8 @@ public class Product {
     // Stock quantity methods
     public void addStock(int quantity) {
         if (quantity > 0 && quantity < 100) {
-            quantityInStock+=quantity;
-            System.out.println("Added "+quantity+" "+this.productName+"s to the stock.");
+            quantityInStock += quantity;
+            System.out.println("Added " + quantity + " " + this.productName + "s to the stock.");
         } else {
             System.out.println("Invalid entry, please try again. Added stock must be less than 100 and greater than 0.");
         }
@@ -79,8 +81,8 @@ public class Product {
 
     public void removeStock(int quantity) {
         if (quantity > 0 && quantity < 100) {
-            quantityInStock-=quantity;
-            System.out.println("Removed "+quantity+" "+this.productName+"s from the stock.");
+            quantityInStock -= quantity;
+            System.out.println("Removed " + quantity + " " + this.productName + "s from the stock.");
         } else {
             System.out.println("Invalid entry, please try again. Failed to remove stock. Removed amount must be more than 0 and less than 100.");
         }
