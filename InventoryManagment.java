@@ -76,7 +76,7 @@ public class InventoryManagment {
                 case 4:
                     // Exit the inventory tool
                     scnr.close();
-                    exit = false;
+                    exit = true;
                     break;
                 default:
                     System.out.println("Remember to select integers 1-4 for a valid menu option.\n");
