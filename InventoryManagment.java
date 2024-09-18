@@ -14,7 +14,7 @@ public class InventoryManagment {
 
         // Product instances 
         // Produce
-        Product carrot = new Product(2, "Pack of Carrots", produce.getCategoryName(), 3.99, 30);
+        Product carrot = new Product(2, "Pack of carrots", produce.getCategoryName(), 3.99, 30);
         // Dairy
         Product cheese = new Product(4, "Block of Cheddar Cheese", dairy.getCategoryName(), 5.49, 15);
         // Meats
@@ -32,7 +32,7 @@ public class InventoryManagment {
         int menuOption;
         int userQuantity;
 
-        Product currentProduct = orangeJuice;
+        Product currentProduct = carrot;
 
         // Main menu 
         String mainMenu = """
@@ -69,9 +69,9 @@ public class InventoryManagment {
                     break;
                 case 3:
                     // Check details of a product
-                    System.out.println("There are currently "+ currentProduct.getQuantityInStock() + " "+currentProduct.getProductName()+"s in stock\n");
-                    System.out.println("The category for "+currentProduct.getProductName()+" is "+currentProduct.getCategory() + "\n");
-                    System.out.println("The price for "+currentProduct.getProductName()+" is "+currentProduct.getPrice());
+                    System.out.println("There are currently "+ currentProduct.getQuantityInStock() + " "+currentProduct.getProductName()+"es in stock\n");
+                    System.out.println("The category for a "+currentProduct.getProductName()+" is "+currentProduct.getCategory() + "\n");
+                    System.out.println("The price for a "+currentProduct.getProductName()+" is "+currentProduct.getPrice());
                     break;
                 case 4:
                     // Exit the inventory tool

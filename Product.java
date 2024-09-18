@@ -71,18 +71,24 @@ public class Product {
 
     // Stock quantity methods
     public void addStock(int quantity) {
-        if (quantity > 0 && quantity < 100) {
+        // Prevent adding more stock for products with excess of 200+ in stock.
+        if (quantity > 0 && quantity < 100 && this.quantityInStock <= 200) {
             quantityInStock += quantity;
             System.out.println("Added " + quantity + " " + this.productName + "s to the stock.");
-        } else {
+        } else if (this.quantityInStock >= 200) {
+            System.out.println("Invalid entry, the maximum amount of stock has been reached.");
+         } else  {
             System.out.println("Invalid entry, please try again. Added stock must be less than 100 and greater than 0.");
         }
     }
 
     public void removeStock(int quantity) {
-        if (quantity > 0 && quantity < 100) {
-            quantityInStock -= quantity;
+        // Making sure we are preventing negative stock for products.
+        if (quantity > 0 && quantity < 100 && quantity <= this.quantityInStock) {
+            this.quantityInStock -= quantity;
             System.out.println("Removed " + quantity + " " + this.productName + "s from the stock.");
+        } else if (quantity > this.quantityInStock) {
+            System.out.println("Invalid entry, stock removed must be less than or equal to existing stock.");
         } else {
             System.out.println("Invalid entry, please try again. Failed to remove stock. Removed amount must be more than 0 and less than 100.");
         }
