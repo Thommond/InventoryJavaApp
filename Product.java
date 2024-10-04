@@ -26,7 +26,7 @@ public class Product {
 
     // Getter and Setter for productID
     public int getProductID() {
-        return productID;
+        return this.productID;
     }
 
     public void setProductID(int productID) {
@@ -35,7 +35,7 @@ public class Product {
 
     // Getter and Setter for productName
     public String getProductName() {
-        return productName;
+        return this.productName;
     }
 
     public void setProductName(String productName) {
@@ -44,7 +44,7 @@ public class Product {
 
     // Getter and Setter for category
     public String getCategory() {
-        return category;
+        return this.category;
     }
 
     public void setCategory(String category) {
@@ -53,7 +53,7 @@ public class Product {
 
     // Getter and Setter for price
     public double getPrice() {
-        return price;
+        return this.price;
     }
 
     public void setPrice(double price) {
@@ -62,7 +62,7 @@ public class Product {
 
     // Getter and Setter for quantityInStock
     public int getQuantityInStock() {
-        return quantityInStock;
+        return this.quantityInStock;
     }
 
     public void setQuantityInStock(int quantityInStock) {
