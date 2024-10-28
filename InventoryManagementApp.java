@@ -2,6 +2,15 @@ import java.util.Scanner;
 
 public class InventoryManagementApp {
 
+
+    /* TODO
+     * I need to still implement the "Generate Reports"
+     * I still need to implement menu tweaks 
+     * I need to test the menu driven application 
+     * I need to find out the difference of menu option 1 and 4
+     * SEE MODULE 3 REQUIRMENTs
+     */
+
     public static void main(String[] args) { 
 
         // Variables for "menu" driven logic 

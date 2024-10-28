@@ -45,7 +45,12 @@ public class StoreInventory {
     }
 
     public void generateReport() {
+        // She wants us to use a common inteface to display all the 
+        // details of specific products. 
 
+        /*The generateReport() method in the StoreInventory
+        class demonstrates polymorphism by handling
+        different product types through a common interface. */
     }
 
 
