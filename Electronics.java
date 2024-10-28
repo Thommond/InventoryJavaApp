@@ -2,6 +2,14 @@ public class Electronics extends Product {
     private int warrantyPeriod;
     private String brand;
 
+    // Constructor 
+    public Electronics(int productID, String productName, String category, double price, int quantityInStock, int warrantyPeriod, String brand) {
+        super(productID, productName, category, price, quantityInStock);
+        this.warrantyPeriod = warrantyPeriod;
+        this.brand = brand;
+    }
+    
+
     // Getters 
     public int getWarrentyPeriod() {
         return this.warrantyPeriod;

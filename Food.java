@@ -5,6 +5,11 @@ import java.time.format.DateTimeParseException;
 public class Food extends Product {
     private String expiryDate;
 
+    public Food(int productID, String productName, String category, double price, int quantityInStock, String expiryDate) {
+        super(productID, productName, category, price, quantityInStock);
+        this.expiryDate = expiryDate;
+    }
+
     // Getter & Setter for expiryDate
     public String getExpiryDate() {
         return this.expiryDate;

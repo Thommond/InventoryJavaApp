@@ -5,6 +5,12 @@ public class Clothing extends Product {
     private int size;
     private String material;
 
+    public Clothing(int productID, String productName, String category, double price, int quantityInStock, int size, String material) {
+        super(productID, productName, category, price, quantityInStock);
+        this.size = size;
+        this.material = material;
+    }
+
     @Override
     public void removeStock(int quantity) {
         if (isReturnPolicyValid() == true) {
@@ -15,7 +21,7 @@ public class Clothing extends Product {
     }
 
     public boolean isReturnPolicyValid() {
-        // I decieded to do something different
+        // Random return policy 25% of invalidity
         Random random = new Random();
         int randNumber = random.nextInt(4) + 1;
         return randNumber != 1; // 75% chance of valid return 
