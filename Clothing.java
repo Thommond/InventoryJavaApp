@@ -26,4 +26,16 @@ public class Clothing extends Product {
         int randNumber = random.nextInt(4) + 1;
         return randNumber != 1; // 75% chance of valid return 
     }
+
+    @Override
+    public void displayProductInfo() {
+       System.out.println("Product info for "+super.getProductName()); 
+       System.out.println("Product ID: "+super.getProductID());
+       System.out.println("Category: "+super.getCategory());
+       System.out.println("Price: "+super.getPrice());
+       System.out.println("Qty in Stock: "+super.getQuantityInStock());
+       System.out.println("Size: "+this.size);
+       System.out.println("Material: "+this.material);
+    }
+
 }

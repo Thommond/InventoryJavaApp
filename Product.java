@@ -93,4 +93,12 @@ public class Product {
             System.out.println("Invalid entry, please try again. Failed to remove stock. Removed amount must be more than 0 and less than 100.");
         }
     }
+
+    public void displayProductInfo() {
+        System.out.println("Product info for "+this.productID);
+        System.out.println("Product ID: "+this.productID);
+        System.out.println("Category: "+this.category);
+        System.out.println("Price: "+this.price);
+        System.out.println("Qty in Stock "+this.quantityInStock);
+    }
 }

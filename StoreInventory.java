@@ -45,12 +45,20 @@ public class StoreInventory {
     }
 
     public void generateReport() {
-        // She wants us to use a common inteface to display all the 
-        // details of specific products. 
-
-        /*The generateReport() method in the StoreInventory
-        class demonstrates polymorphism by handling
-        different product types through a common interface. */
+        // This displays all the products info
+        System.out.println("_____________________________");
+        this.product1.displayProductInfo();
+        System.out.println("_____________________________");
+        this.product2.displayProductInfo();
+        System.out.println("_____________________________");
+        this.product3.displayProductInfo();
+        System.out.println("_____________________________");
+        this.product4.displayProductInfo();
+        System.out.println("_____________________________");
+       
+        /* She wants one that accounts for "Whats in stock" so 
+         * only display "Products" which are in stock.
+         */
     }
 
 

@@ -41,4 +41,14 @@ public class Food extends Product {
         }
     }
 
+    @Override
+    public void displayProductInfo() {
+       System.out.println("Product info for "+super.getProductName()); 
+       System.out.println("Product ID: "+super.getProductID());
+       System.out.println("Category: "+super.getCategory());
+       System.out.println("Price: "+super.getPrice());
+       System.out.println("Qty in Stock: "+super.getQuantityInStock());
+       System.out.println("Exp Date: "+this.expiryDate);
+    }
+
 }
