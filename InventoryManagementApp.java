@@ -2,15 +2,6 @@ import java.util.Scanner;
 
 public class InventoryManagementApp {
 
-
-    /* TODO
-     * I need to still implement the "Generate Reports"
-     * I still need to implement menu tweaks 
-     * I need to test the menu driven application 
-     * I need to find out the difference of menu option 1 and 4
-     * SEE MODULE 3 REQUIRMENTs
-     */
-
     public static void main(String[] args) { 
 
         // Variables for "menu" driven logic 
@@ -32,11 +23,11 @@ public class InventoryManagementApp {
             Menu: 
             1. Display all products 
             
-            2. Add quanity to a product
+            2. Add quantity to a product
             
-            3. Remove stock of a proudct
+            3. Remove stock of a product
             
-            4. Generate Report
+            4. Generate Report on all products
             
             5. Exit 
             """;
@@ -51,8 +42,12 @@ public class InventoryManagementApp {
             switch (menuOption) {
                 // Based on users input do action
                 case 1:
-                    // Check details of a product
-                    // Get products by their type (Eg: Electronics, Food, Clothing)
+                    // Check basic details of a product
+                    System.out.println("Available Products");
+                    System.out.println("Name: "+iphone.getProductName()+" ID: "+iphone.getProductID());
+                    System.out.println("Name: "+ playstation.getProductName()+" ID: "+playstation.getProductID());
+                    System.out.println("Name: "+sweater.getProductName()+" ID: "+sweater.getProductID());
+                    System.out.println("Name: "+apple.getProductName()+" ID: "+apple.getProductID());
                     break;
                 case 2:
                     // Add quantity of an item
@@ -61,6 +56,7 @@ public class InventoryManagementApp {
                     System.out.println("Please enter a quantity less then or equal to 100");
                     userQuantity = scnr.nextInt();
                     inventory.addStockToProduct(productId, userQuantity);
+                    break;
                 case 3:
                     // Remove quantity of an item
                     System.out.println("Please enter the productID of the item.");
@@ -71,14 +67,17 @@ public class InventoryManagementApp {
                     break;
                 case 4:
                     // Isn't this literly the same as option 1;
+                    inventory.generateReport();
                     break;
                 case 5: 
-                    // Exit the inventory tool
+                    // Exit the inventory toolsd
                     scnr.close();
+                    System.out.println("Thanks for using the inventory system. Have a great day!");
                     exit = true;
                     break;
                 default:
                     System.out.println("Remember to select integers 1-5 for a valid menu option.\n");
+                    break;
 
             }
         }

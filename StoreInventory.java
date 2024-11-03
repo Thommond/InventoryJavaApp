@@ -1,12 +1,12 @@
 
 public class StoreInventory {
     // Product instances 
-    private Electronics product1;
-    private Electronics product2;
-    private Clothing product3;
-    private Food product4;
+    private Product product1;
+    private Product product2;
+    private Product product3;
+    private Product product4;
 
-    public StoreInventory(Electronics product1, Electronics product2, Clothing product3, Food product4) {
+    public StoreInventory(Product product1, Product product2, Product product3, Product product4) {
         this.product1 = product1;
         this.product2 = product2;
         this.product3 = product3;
@@ -14,38 +14,39 @@ public class StoreInventory {
     }
 
     public void addStockToProduct(int productID, int quantity) {
-
+        // This ensures we are using the right product specific method.
         if (this.product1.getProductID() == productID) {
             this.product1.addStock(quantity);
         } else if (this.product2.getProductID() == productID) {
             this.product2.addStock(quantity);
         } else if (this.product3.getProductID() == productID) {
             this.product3.addStock(quantity);
-        } else if (this.product3.getProductID() == productID) {
+        } else if (this.product4.getProductID() == productID) {
             this.product4.addStock(quantity);
         } else {
-            System.out.println("Sorry it seems your item was not found. Try again!");
+            System.out.println("Sorry it seems your item was not found. \n Double check the product ID and try again!");
         } 
     }
 
 
     public void removeStockFromProduct(int productID, int quantity) {
-
+        // This ensures we are using the right product specific method.
         if (this.product1.getProductID() == productID) {
-            this.product1.addStock(quantity);
+            this.product1.removeStock(quantity);
         } else if (this.product2.getProductID() == productID) {
-            this.product2.addStock(quantity);
+            this.product2.removeStock(quantity);
         } else if (this.product3.getProductID() == productID) {
-            this.product3.addStock(quantity);
-        } else if (this.product3.getProductID() == productID) {
-            this.product4.addStock(quantity);
+            this.product3.removeStock(quantity);
+        } else if (this.product4.getProductID() == productID) {
+            this.product4.removeStock(quantity);
         } else {
-            System.out.println("Sorry it seems your item was not found. Try again!");
+            System.out.println("Sorry it seems your item was not found. \n Double check the product ID and try again!");
         } 
     }
 
     public void generateReport() {
-        // This displays all the products info
+        // This displays all the individual product specific info 
+        System.out.println("Full details and stock information of products:");
         System.out.println("_____________________________");
         this.product1.displayProductInfo();
         System.out.println("_____________________________");
@@ -55,10 +56,7 @@ public class StoreInventory {
         System.out.println("_____________________________");
         this.product4.displayProductInfo();
         System.out.println("_____________________________");
-       
-        /* She wants one that accounts for "Whats in stock" so 
-         * only display "Products" which are in stock.
-         */
+    
     }
 
 

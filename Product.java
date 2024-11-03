@@ -73,7 +73,7 @@ public class Product {
     public void addStock(int quantity) {
         // Prevent adding more stock for products with excess of 200+ in stock.
         if (quantity > 0 && quantity < 100 && this.quantityInStock <= 200) {
-            quantityInStock += quantity;
+            this.quantityInStock += quantity;
             System.out.println("Added " + quantity + " " + this.productName + "s to the stock.");
         } else if (this.quantityInStock >= 200) {
             System.out.println("Invalid entry, the maximum amount of stock has been reached.");
