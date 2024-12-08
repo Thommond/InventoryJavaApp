@@ -14,7 +14,7 @@ public class InventoryManagementApp1 {
 
         StoreInventoryArray inventory = new StoreInventoryArray(4);
 
-        // These products start with a "stock" for testing purposes, but in a real system they would not.
+        // These products start with a "stock" for testing purposes, but in a real system they would not. 
         Electronics iphone = new Electronics(1, "Iphone 16", "Electronics", 1000.00, 30, 90, "Apple");
         Electronics playstation = new Electronics(2, "Playstation", "Electronics", 600.00, 18, 90, "Sony");
         Clothing sweater = new Clothing(3, "Sweater", "Clothing", 15.00, 50, 10, "Alpacha Wool");
@@ -82,24 +82,38 @@ public class InventoryManagementApp1 {
                    break;
                 case 3:
                    // Remove the product from the inventory 
+                   if (inventory.getProductCount() > 0) {
                    System.out.println("Please enter the productID of the product you would like to remove.");
                    productId = scnr.nextInt();
                    inventory.removeProduct(productId);
+                   } else {
+                    System.out.println("Sorry, you can't remvove products if the inventory is empty.");
+                   }
+                   break;
                 case 4:
                     // Add stock to a product
+                    if (inventory.getProductCount() > 0) {
                     System.out.println("Please enter the productID of the product.");
                     productId = scnr.nextInt();
                     System.out.println("Please enter a stock count less then or equal to 100");
                     userQuantity = scnr.nextInt();
                     inventory.addStockToProduct(productId, userQuantity);
+                    } else {
+                        System.out.println("Sorry, you can't add stock if there are no products.");
+                    }
+
                     break;
                 case 5: 
                     // Remove quantity of an item
+                    if (inventory.getProductCount() > 0) {
                     System.out.println("Please enter the productID of the item.");
                     productId = scnr.nextInt();
                     System.out.println("Please enter a quantity less then or equal to 100");
                     userQuantity = scnr.nextInt();
                     inventory.removeStockFromProduct(productId, userQuantity);
+                    } else {
+                    System.out.println("Sorry, you can't remove stock if there are no products.");
+                    }
                     break;
                 case 6: 
                     inventory.generateReport();

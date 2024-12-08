@@ -76,4 +76,9 @@ public class StoreInventoryList {
         System.out.println("Full Inventory Report:");
         displayAllProducts();
     }
+
+     // Get the number of products in the inventory
+     public int getProductCount() {
+        return products.size();
+    }
 }

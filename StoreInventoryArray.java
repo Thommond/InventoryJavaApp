@@ -10,12 +10,17 @@ public class StoreInventoryArray {
 
     // Add a product to the inventory
     public void addProduct(Product product) {
-        if (this.productCount < products.length) {
-            this.products[this.productCount] = product;
-            this.productCount++;
-            System.out.println("Your product has been added successfully.");
+     int index = findProductIndexByID(product.getProductID());
+            if (index == -1) {
+            if (this.productCount < products.length) {
+                this.products[this.productCount] = product;
+                this.productCount++;
+                System.out.println("Your product has been added successfully.");
+            } else {
+                System.out.println("Sorry, The inventory is full.");
+            }
         } else {
-            System.out.println("Sorry, The inventory is full.");
+            System.out.println("You can't add a product that is already in the inventory.");
         }
     }
 
@@ -51,7 +56,7 @@ public class StoreInventoryArray {
             this.products[index].addStock(quantity);
             System.out.println("Stock added successfully.");
         } else {
-            System.out.println("Error: Product with ID " + productID + " not found.");
+            System.out.println("The product with ID " + productID + " not found.");
         }
     }
 
@@ -84,7 +89,9 @@ public class StoreInventoryArray {
         displayAllProducts();
     }
 
-    public Product[] getProducts() {
-        return products;
+    public int getProductCount() {
+        return this.productCount;
     }
+
+
 }

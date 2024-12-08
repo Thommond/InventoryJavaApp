@@ -45,7 +45,7 @@ public class InventoryManagementApp {
                     // Check basic details of a product
                     System.out.println("Available Products");
                     System.out.println("Name: "+iphone.getProductName()+" ID: "+iphone.getProductID());
-                    System.out.println("Name: "+playstation.getProductName()+" ID: "+playstation.getProductID());
+                    System.out.println("Name: "+ playstation.getProductName()+" ID: "+playstation.getProductID());
                     System.out.println("Name: "+sweater.getProductName()+" ID: "+sweater.getProductID());
                     System.out.println("Name: "+apple.getProductName()+" ID: "+apple.getProductID());
                     break;
