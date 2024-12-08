@@ -20,7 +20,7 @@ public class StoreInventoryArray {
     }
 
     // Remove a product by ID
-    public void removeProduct(String productID) {
+    public void removeProduct(int productID) {
         int index = findProductIndexByID(productID);
         if (index != -1) {
             for (int i = index; i < this.productCount - 1; i++) {
@@ -35,9 +35,9 @@ public class StoreInventoryArray {
     }
 
     // Find product index by ID
-    private int findProductIndexByID(String productID) {
+    private int findProductIndexByID(int productID) {
         for (int i = 0; i < this.productCount; i++) {
-            if (this.products[i].getProductID().equals(productID)) {
+            if (this.products[i].getProductID() == productID) {
                 return i;
             }
         }
@@ -45,7 +45,7 @@ public class StoreInventoryArray {
     }
 
     // Add stock to a product
-    public void addStockToProduct(String productID, int quantity) {
+    public void addStockToProduct(int productID, int quantity) {
         int index = findProductIndexByID(productID);
         if (index != -1) {
             this.products[index].addStock(quantity);
@@ -56,7 +56,7 @@ public class StoreInventoryArray {
     }
 
     // Remove stock from a product
-    public void removeStockFromProduct(String productID, int quantity) {
+    public void removeStockFromProduct(int productID, int quantity) {
         int index = findProductIndexByID(productID);
         if (index != -1) {
             this.products[index].removeStock(quantity);
@@ -73,7 +73,7 @@ public class StoreInventoryArray {
         } else {
             for (int i = 0; i < this.productCount; i++) {
                 this.products[i].displayProductInfo();
-                System.out.println("--------------------------------");
+                System.out.println("___________________________");
             }
         }
     }

@@ -17,7 +17,7 @@ public class StoreInventoryList {
     }
 
     // Remove a product by ID
-    public void removeProduct(String productID) {
+    public void removeProduct(int productID) {
         Product product = findProductByID(productID);
         if (product != null) {
             products.remove(product);
@@ -28,9 +28,9 @@ public class StoreInventoryList {
     }
 
     // Find a product by ID
-    private Product findProductByID(String productID) {
+    private Product findProductByID(int productID) {
         for (Product product : products) {
-            if (product.getProductID().equals(productID)) {
+            if (product.getProductID() == productID) {
                 return product;
             }
         }
@@ -38,7 +38,7 @@ public class StoreInventoryList {
     }
 
     // Add stock to a product
-    public void addStockToProduct(String productID, int quantity) {
+    public void addStockToProduct(int productID, int quantity) {
         Product product = findProductByID(productID);
         if (product != null) {
             product.addStock(quantity);
@@ -49,7 +49,7 @@ public class StoreInventoryList {
     }
 
     // Remove stock from a product
-    public void removeStockFromProduct(String productID, int quantity) {
+    public void removeStockFromProduct(int productID, int quantity) {
         Product product = findProductByID(productID);
         if (product != null) {
             product.removeStock(quantity);
